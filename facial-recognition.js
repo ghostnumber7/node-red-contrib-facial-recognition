@@ -179,7 +179,7 @@ module.exports = function(RED)
     (
       faceapi.tf.setBackend('tensorflow')
     )
-    .then( tfjs_backend = true )
+    .then(() => tfjs_backend = true )
     .catch(error =>
       {
       tfjs_backend = ("Could not set tfjs backend" + error),
@@ -198,7 +198,7 @@ module.exports = function(RED)
     (
       faceapi.tf.enableProdMode()
     )
-    .then( tfjs_ProdMode = true )
+    .then(() => tfjs_ProdMode = true )
     .catch(error =>
       {
       tfjs_ProdMode = ("Could not set tfjs ProdMode" + error),
@@ -217,7 +217,7 @@ module.exports = function(RED)
     (
       faceapi.tf.ENV.set('DEBUG', false)
     )
-    .then( tfjs_setDEBUG = true )
+    .then(() => tfjs_setDEBUG = true )
     .catch(error =>
       {
       tfjs_setDEBUG = ("Could not set tfjs DEBUG" + error),
@@ -236,7 +236,7 @@ module.exports = function(RED)
     (
       faceapi.tf.ready()
     )
-    .then( tfjs_ready = true )
+    .then(() => tfjs_ready = true )
     .catch(error =>
       {
       tfjs_ready = ("tfjs is not ready" + error),
@@ -276,7 +276,7 @@ module.exports = function(RED)
       faceapi.nets.ssdMobilenetv1.loadFromDisk(modelPath),
       faceapi.nets.tinyFaceDetector.loadFromDisk(modelPath)
     ])
-    .then(loadthemodels_no_error = true)
+    .then(() => loadthemodels_no_error = true)
     .catch(error =>
       {
       loadthemodels_no_error = ("A face-api.js model(s) did not load. "+ error),
